@@ -125,6 +125,12 @@ for i in range(min(num_masks, 3)):  # Display up to 3 masks
 plt.tight_layout()
 plt.show()
 ```
-[demo_erc_1](/workshop/src/workshop_demo_erc_1.png)
+
+![demo_erc_1](/workshop/src/workshop_demo_erc_1.png)
+![demo_erc_2](/workshop/src/workshop_demo_erc_2.png)
+
+
+![demo_tank_1](/workshop/src/workshop_demo_tank_1.png)
+![demo_tank_2](/workshop/src/workshop_demo_tank_2.png)
 
 This code demonstrates the usage of SAM for semantic segmentation, which can be particularly beneficial in various defense-related applications by enhancing object detection and recognition capabilities. Available contact: lee3450@purdue.edu
