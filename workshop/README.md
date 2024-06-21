@@ -1,6 +1,6 @@
 # PMRI Workshop Info
 
-This research was presented at the Purdue Military Research Institute (PMRI) to educate US and Korean military soldiers on the importance of segmentation in computer vision. The presentations take place during the symposium held at Purdue University in West Lafayette, IN, USA, on June 25-26, 2024.
+This research is presented at the Purdue Military Research Institute (PMRI) to educate US and Korean military soldiers on the importance of segmentation in computer vision. The presentations take place during the symposium held at Purdue University in West Lafayette, IN, USA, on June 25-26, 2024.
 
 ## Symposium Overview
 
