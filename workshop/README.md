@@ -16,12 +16,6 @@ The PMRI focuses on collaborative efforts with military partners to advance rese
 
 Abstract submissions are invited on topics including emerging defense research, AI and autonomy, and defense-specific areas. For more details, see [PMRI Symposium Topics](https://www.emeraldgrouppublishing.com/how-to/authoring-editing-reviewing/write-article-abstract).
 
-### Important Dates
-
-- Deadline for abstract submissions: June 7, 2024
-- Author notification: June 14, 2024
-- Symposium registration deadline: June 21, 2024
-
 ### Additional Links
 
 - [Purdue Military Research Institute (PMRI)](https://engineering.purdue.edu/PMRI)
