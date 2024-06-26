@@ -207,30 +207,35 @@ plt.show()
 ![demo_erc_1](/workshop/src/workshop_demo_erc_1.png)
 ![demo_erc_2](/workshop/src/workshop_demo_erc_2.png)
 
+### Environment Settings
+```
+nvidia-smi # Use the 'nvidia-smi' command to check GPU access
+Tue May  7 16:29:25 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 4090        Off |   00000000:01:00.0  On |                  Off |
+|  0%   29C    P8              6W /  500W |     678MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A      2367      G   /usr/lib/xorg/Xorg                            146MiB |
+|    0   N/A  N/A      3060      G   /usr/bin/gnome-shell                          154MiB |
+|    0   N/A  N/A     23983      G   ...sion,SpareRendererForSitePerProcess        246MiB |
+|    0   N/A  N/A     28012      G   /usr/lib/firefox/firefox-bin                  112MiB |
++-----------------------------------------------------------------------------------------+
+```
 
-
-## Key Components
-
-This project consists of several key components: Data. Model, Objective Functions and Optimization Algorithms
-
-- **Data**: In image data, each example could represent an individual photograph, with features comprising numerical representations of pixel values. In cases where examples share the same number of numerical features, inputs are referred to as fixed-length vectors, and the constant length of these vectors is termed the dimensionality of the data. While fixed-length vectors are convenient, not all data can be easily represented in this format. Images from the Internet, for instance, may vary in resolution and shape, and text data poses challenges due to its varying length.
-
-The abundance of data simplifies tasks, enabling the training of more powerful models and reducing reliance on preconceived assumptions, however, poor data quality or the inclusion of irrelevant features can lead to subpar performance or unintended consequences, such as perpetuating societal biases in predictive models.
-
-- **Model**: The model component refers to the machine learning or statistical models employed in the project. This could include deep learning models, traditional machine learning algorithms, or custom models developed specifically for the task at hand. Most machine learning involves transforming the data in some sense. Deep learning is differentiated from classical approaches principally by the set of powerful models that it focuses on. These models consist of many successive transformations of the data that are chained together top to bottom, thus the name deep learning.
-
-- **Objective Functions**: Objective functions, also known as loss functions or cost functions, are used to quantify the performance of the model. These functions define what the model aims to optimize during training and evaluation, guiding the learning process towards achieving the desired outcomes.
-
-- **Optimization Algorithms**: Optimization algorithms are algorithms used to minimize the objective functions and update the model parameters during training. These algorithms play a crucial role in training the model efficiently and effectively, ensuring convergence to optimal or near-optimal solutions.
-
-Each of these components plays a vital role in the project's success, contributing to the development, training, and evaluation of machine learning models for various tasks.
-
-
-
-
-# Environment Settings
-
-## Operating System and GPU Utilization
+### Operating System and GPU Utilization
 - **Operating System:** Pop!_OS ([Source](https://pop.system76.com/))
   - Pop!_OS is a Linux distribution developed by System76, based on Ubuntu and featuring a customized GNOME desktop known as COSMIC.
   - It provides out-of-the-box support for both AMD and Nvidia GPUs.
@@ -238,48 +243,12 @@ Each of these components plays a vital role in the project's success, contributi
   - Includes a recovery partition for system refresh.
   - The latest version, Ubuntu 22.04 LTS, was selected for this study.
 
-## Development Tools
+### Development Tools
 - **Editor:** Visual Studio Code (VS Code) ([Source](https://code.visualstudio.com/))
   - VS Code was chosen as the editor due to its compatibility with Linux.
-  - Unique features include support for debugging, syntax highlighting, code refactoring, and embedded Git.
  
 
 
-# Using Hugging Face and Gradio for Interactive Image Segmentation with SAM
+### Using HuggingFace ([Source](https://huggingface.co/)) and Gradio for Interactive Image Segmentation with SAM
 
-## Introduction
-
-This repository demonstrates how to leverage the power of Hugging Face and Gradio to create an interactive image segmentation application using the Segment Anything Model (SAM). SAM is a versatile model capable of segmenting images based on user-defined points. By integrating SAM with Hugging Face's model hosting and Gradio's user interface components, we create a seamless experience for segmenting images with just a few clicks.
-
-## Why Hugging Face ([Source](https://huggingface.co/))?
-
-### Model Hosting and Management
-
-Hugging Face provides an excellent platform for hosting and managing models. By leveraging Hugging Face's infrastructure, we can easily deploy and share our SAM model, making it accessible to anyone via a simple API.
-
-### Extensive Model Repository
-
-With Hugging Face, we have access to a vast repository of pre-trained models, including transformers and vision models. This enables us to experiment with various architectures and leverage state-of-the-art techniques for image segmentation tasks.
-
-## Why Gradio ([Source](https://www.gradio.app/))?
-
-### User-Friendly Interface
-
-Gradio offers a user-friendly interface for building interactive applications with machine learning models. Its intuitive design allows users to upload images and interact with the model through simple UI components like sliders and buttons.
-
-### Rapid Prototyping
-
-Gradio accelerates the development process by providing pre-built UI components that can be easily integrated with machine learning models. This allows us to quickly prototype and iterate on our image segmentation application without spending time on UI development.
-
-## How to Use
-
-To use this application, simply upload an image and click on the area of interest. The model will segment the image based on the selected point, providing instant feedback to the user.
-
-## Getting Started
-
-To get started, clone this repository and follow the setup instructions in the README. Make sure to install the required dependencies and download the SAM checkpoint file.
-
-## Contributions
-
-Contributions are welcome! If you have ideas for improvements or new features, feel free to open an issue or submit a pull request.
-
+With Hugging Face, it is easy to get access to a vast repository of pre-trained models, including transformers and vision models. This enables us to experiment with various architectures and leverage state-of-the-art techniques for image segmentation tasks. In addition, Gradio offers a user-friendly interface for building interactive applications with machine learning models. Its intuitive design allows users to upload images and interact with the model through simple UI components like sliders and buttons.
