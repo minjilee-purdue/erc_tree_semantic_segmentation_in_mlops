@@ -1,4 +1,4 @@
-## Integrating AI and ML in Agriculture and Forestry
+## Semantic Segmentation for Detecting Eastern Red Cedar Trees
 
 - **Overview:**
   The management and control of tree types, growth, and structure in real-world settings remains a challenge due to scale and cost. Often, such approaches are seen as impractical and overly theoretical, particularly for large-scale projects, as the labor and equipment required can be prohibitively expensive. One prominent example of this challenge is the spread of invasive plant species, such as Eastern Red Cedar (ECR) or Juniperus virginiana.
