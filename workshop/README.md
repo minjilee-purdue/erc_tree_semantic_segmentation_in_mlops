@@ -120,6 +120,12 @@ plt.tight_layout()
 plt.show()
 ```
 
+
+![demo_erc_1](/assets/demo_01.png)
+![demo_erc_2](/assets/demo_02.png)
+![demo_erc_3](/assets/demo_03.png)
+![demo_erc_4](/assets/demo_04.png)
+
 ![demo_erc_1](/workshop/src/workshop_demo_erc_1.png)
 ![demo_erc_2](/workshop/src/workshop_demo_erc_2.png)
 
