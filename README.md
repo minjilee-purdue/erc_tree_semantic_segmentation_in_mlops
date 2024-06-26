@@ -156,6 +156,8 @@ plt.show()
 ![demo_erc_3](/assets/demo_03.png)
 ![demo_erc_4](/assets/demo_04.png)
 
+![demo_erc_4](demo.gif)
+
 ![demo_erc_1](/workshop/src/workshop_demo_erc_1.png)
 ![demo_erc_2](/workshop/src/workshop_demo_erc_2.png)
 
