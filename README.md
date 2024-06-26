@@ -237,10 +237,10 @@ Tue May  7 16:29:25 2024
  
 ### SAM Demo with HuggingFace/Gradio
 
-![demo_erc_1](/assets/web_ui_demo_01.png)
-![demo_erc_2](/assets/web_ui_demo_02.png)
-![demo_erc_3](/assets/web_ui_demo_03.png)
-![demo_erc_4](/assets/web_ui_demo_04.png)
+![demo_erc_1](/src/assets/web_ui_demo_01.png)
+![demo_erc_2](/src/assets/web_ui_demo_02.png)
+![demo_erc_3](/src/assets/web_ui_demo_03.png)
+![demo_erc_4](/src/assets/web_ui_demo_04.png)
 
 ![demo_erc_4](final_demo.gif)
 
