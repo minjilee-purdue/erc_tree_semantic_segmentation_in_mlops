@@ -28,7 +28,7 @@ def show_box(box, ax):
     ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor='none', lw=2))
 
 # Load and display the image
-image = cv2.imread('/home/minjilee/erc_tree_semantic_segmentation_in_mlops/tests/src/test_image_02.png')
+image = cv2.imread('/home/minjilee/erc_tree_semantic_segmentation_in_mlops/tests/src/test_image_01.jpg')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 # Create the figure and axis for image display

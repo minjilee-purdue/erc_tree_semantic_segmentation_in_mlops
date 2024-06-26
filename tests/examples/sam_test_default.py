@@ -24,7 +24,7 @@ def show_box(box, ax):
     ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0,0,0,0), lw=2))
 
 # Load and display the image
-image = cv2.imread('/home/minjilee/erc_tree_semantic_segmentation_in_mlops/tests/src/test_image_02.png')
+image = cv2.imread('/home/minjilee/erc_tree_semantic_segmentation_in_mlops/tests/src/test_image_01.jpg')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 # Create subplots for displaying images and masks in one row
@@ -51,7 +51,7 @@ predictor = SamPredictor(sam)
 
 predictor.set_image(image)
 
-input_point = np.array([[350, 300]])
+input_point = np.array([[1000, 1030]])
 input_label = np.array([1])
 
 # Plot with input point and title
