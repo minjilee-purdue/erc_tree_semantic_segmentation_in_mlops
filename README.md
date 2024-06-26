@@ -196,14 +196,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-
-![demo_erc_1](/assets/demo_01.png)
-![demo_erc_2](/assets/demo_02.png)
-![demo_erc_3](/assets/demo_03.png)
-![demo_erc_4](/assets/demo_04.png)
-
-![demo_erc_4](final_demo.gif)
-
 ![demo_erc_1](/workshop/src/workshop_demo_erc_1.png)
 ![demo_erc_2](/workshop/src/workshop_demo_erc_2.png)
 
@@ -242,6 +234,15 @@ Tue May  7 16:29:25 2024
   - The distribution supports TensorFlow and CUDA without additional configuration.
   - Includes a recovery partition for system refresh.
   - The latest version, Ubuntu 22.04 LTS, was selected for this study.
+ 
+### SAM Demo with HuggingFace/Gradio
+
+![demo_erc_1](/assets/demo_01.png)
+![demo_erc_2](/assets/demo_02.png)
+![demo_erc_3](/assets/demo_03.png)
+![demo_erc_4](/assets/demo_04.png)
+
+![demo_erc_4](final_demo.gif)
 
 ### Development Tools
 - **Editor:** Visual Studio Code (VS Code) ([Source](https://code.visualstudio.com/))
