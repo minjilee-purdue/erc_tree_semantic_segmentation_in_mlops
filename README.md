@@ -117,7 +117,7 @@ def show_mask(mask, ax, random_color=False):
     mask_image = mask.reshape(h, w, 1) * color.reshape(1, 1, -1)
     ax.imshow(mask_image)
 ```
-#### Function to display points on an image/to display a bounding box on an image.
+#### Function to display points on an image/to display a bounding box on an image
 ```python
 def show_points(coords, labels, ax, marker_size=375):
     pos_points = coords[labels==1]
@@ -130,7 +130,7 @@ def show_box(box, ax):
     w, h = box[2] - box[0], box[3] - box[1]
     ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0,0,0,0), lw=2))
 ```
-#### Load and convert the image from BGR to RGB format then create subplots and display the original image.
+#### Load and convert the image from BGR to RGB format then create subplots and display the original image
 ```python
 # Load and display the image
 image = cv2.imread('/home/minjilee/erc_tree_semantic_segmentation_in_mlops/tests/src/test_image_01.jpg')
@@ -149,7 +149,7 @@ sys.path.append("..")
 from segment_anything import sam_model_registry, SamPredictor
 
 ```
-#### Load the SAM model and move it to the specified device.
+#### Load the SAM model and move it to the specified device
 ```python
 sam_checkpoint = "/home/minjilee/erc_tree_semantic_segmentation_in_mlops/weights/sam_vit_h_4b8939.pth"
 model_type = "vit_h"
@@ -164,7 +164,7 @@ predictor = SamPredictor(sam)
 predictor.set_image(image)
 
 ```
-#### Define the coordinates of the input point and its label.
+#### Define the coordinates of the input point and its label
 ```python
 input_point = np.array([[1000, 1030]])
 input_label = np.array([1])
