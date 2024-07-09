@@ -1,6 +1,0 @@
-Edge-based Entropy: 3.8994
-Total complexity (MDL Clustering): 37.5107
-Patch-based Signature Entropy at scale 4: 6.5553
-Patch-based Signature Entropy at scale 8: 9.0690
-Patch-based Signature Entropy at scale 16: 10.5504
-Patch-based Signature Entropy at scale 32: 11.3361
