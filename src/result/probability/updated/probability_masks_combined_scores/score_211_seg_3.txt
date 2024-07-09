@@ -1,0 +1,4 @@
+Original Score: 0.974
+Clipped Score: 0.974
+Normalized Score: 0.990
+Combined Score: 0.982

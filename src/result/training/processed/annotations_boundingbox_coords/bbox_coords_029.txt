@@ -1,0 +1,2 @@
+[x_min: 1620, x_max: 2277], [y_min: 638, y_max: 1214]
+[x_min: 2023, x_max: 2028], [y_min: 156, y_max: 157]

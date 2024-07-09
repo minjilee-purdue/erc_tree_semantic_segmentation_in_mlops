@@ -1,0 +1,1 @@
+Edge Density Canny: 60.9342

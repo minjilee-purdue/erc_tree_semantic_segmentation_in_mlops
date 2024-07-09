@@ -1,0 +1,2 @@
+[x_min: 767, x_max: 782], [y_min: 295, y_max: 313]
+[x_min: 448, x_max: 774], [y_min: 290, y_max: 558]

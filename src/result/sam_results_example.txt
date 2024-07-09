@@ -1,0 +1,8 @@
+Mask 1 range: False to True
+Mask 2 range: False to True
+Mask 3 range: False to True
+Mask data type: bool
+Original Scores: [0.9844831 1.0096979 0.9794643]
+Clipped scores: [0.9844831 1.        0.9794643]
+Normalized scores: [0.9750274 1.        0.9700568]
+Combined scores: [0.9797553  1.         0.97476053]

@@ -1,0 +1,6 @@
+[x_min: 708, x_max: 766], [y_min: 1779, y_max: 1815]
+[x_min: 712, x_max: 725], [y_min: 1738, y_max: 1769]
+[x_min: 794, x_max: 808], [y_min: 1732, y_max: 1748]
+[x_min: 805, x_max: 806], [y_min: 1709, y_max: 1714]
+[x_min: 714, x_max: 818], [y_min: 1642, y_max: 1712]
+[x_min: 859, x_max: 1650], [y_min: 1405, y_max: 1824]
