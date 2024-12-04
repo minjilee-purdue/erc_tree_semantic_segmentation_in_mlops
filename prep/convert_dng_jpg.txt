@@ -1,0 +1,7 @@
+for file in *.DNG; do
+    dcraw -c -w "$file" | convert -quality 100 - "${file%.DNG}.jpg"
+done
+
+// Explanation:
+// ${file%.DNG}: Removes the .DNG extension from the filename, leaving only the base name.
+// "${file%.DNG}.jpg": Appends .jpg to the base name.
