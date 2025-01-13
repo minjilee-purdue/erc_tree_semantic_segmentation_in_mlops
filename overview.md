@@ -121,4 +121,122 @@ with open(annotations_path, "w") as f:
 print(f"Annotations saved to {annotations_path}")
 ```
 
-#### Step 3: Segmentation and Annotation
+#### Step 3: Model Training
+##### Step 3-1: Fine-Tuning SAM
+The SAM model with annotated dataset described above was used as pre-trained weights (ViT-H) as a starting point, and transfer learning techniques were applied to adapt the model to the specific task of detecting and segmenting eastern red cedar trees.
+
+Details:
+
+* Data Augmentation: The dataset was augmented using transformations such as flipping, rotation, scaling, cropping, and adding Gaussian noise. This helped increase the dataset size and introduce variability, improving the model’s ability to generalize across different environmental conditions and tree appearances.
+Seasonal variability in the dataset (e.g., images from March, July, and November) was leveraged to ensure the model's robustness against changes in tree foliage and surrounding environments.
+
+##### Step 3-2: Comparing Fine-Tuned vs. Non-Fine-Tuned Models
+I evaluated the performance improvement of the fine-tuned SAM model over the pre-trained version by comparing them on key metrics.
+
+Details:
+
+* Quantitative Metrics: I used metrics like Intersection over Union (IoU), precision, recall, and F1 score to measure segmentation quality.
+* Qualitative Assessment: I visualized segmentation outputs by overlaying the predicted masks on test images, allowing for a detailed comparison of alignment with ground truth.
+* Inference Time: I compared the inference times of the fine-tuned and non-fine-tuned models to evaluate their computational efficiency for deployment scenarios.
+
+##### Step 3-3: Comparing Models with and without GPS Integration
+I integrated GPS data into the model to assess whether it improved segmentation accuracy, especially in ambiguous cases where environmental context played a role.
+
+Details:
+
+* GPS as Auxiliary Input: I incorporated GPS features (e.g., latitude, longitude, proximity to water) into a multi-modal learning framework. These features were combined with image embeddings from SAM during training.
+* Performance Comparison: I evaluated the segmentation accuracy of models with and without GPS data, focusing on scenarios where environmental context significantly impacted predictions.
+
+
+##### Step 3-4: Building a Multi-Model System
+I developed a multi-model system to answer user prompts such as, “Is there an eastern red cedar tree (ERC) in this image?”
+
+Details:
+
+* Two-Stage Pipeline: The system first detects regions of interest (ROIs) in the image and then classifies these ROIs with confidence scores.
+* Interactive User Interface: I built a user-friendly interface using Gradio, allowing users to query images and receive results like “89% probability of eastern red cedar presence,” along with annotated outputs.
+* Customizable Thresholds: I implemented adjustable confidence thresholds to provide flexibility based on the user’s needs.
+
+
+###### Key Features of the Code:
+* Pre-trained Model Loading: The SAM model is loaded with pre-trained weights for transfer learning.
+* Custom Segmentation Head: A 1x1 convolutional layer is added to tailor the model for binary segmentation tasks.
+* Layer Freezing: SAM’s pre-trained layers are frozen initially, allowing only the segmentation head to be trained.
+* Fine-Tuning: Specific layers of SAM are unfrozen gradually for fine-tuning, adapting pre-trained features to the  cedar segmentation task.
+* Layer-Specific Learning Rates: Different learning rates are applied to SAM layers and the new segmentation head to balance stability and task-specific learning.
+
+```python
+import torch
+import torch.nn as nn
+from segment_anything import sam_model_registry
+
+# Set device
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+# Load the pre-trained SAM model (ViT-H variant)
+sam_checkpoint = "sam_vit_h_4b8939.pth"  # Path to the SAM checkpoint
+model_type = "vit_h"  # Model type: Vision Transformer - H
+sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
+sam.to(device)
+
+# Define the modified SAM model with a custom binary segmentation head
+class SAMFineTuned(nn.Module):
+    def __init__(self, sam_model):
+        super(SAMFineTuned, self).__init__()
+        self.sam = sam_model  # Pre-trained SAM model
+        self.segmentation_head = nn.Conv2d(256, 1, kernel_size=1)  # Binary segmentation head
+
+    def forward(self, x):
+        # Extract features using SAM's pre-trained image encoder
+        features = self.sam.image_encoder(x)
+        # Apply the segmentation head to get the output
+        output = self.segmentation_head(features)
+        # Use sigmoid activation for binary mask output
+        return torch.sigmoid(output)
+
+# Initialize the fine-tuned SAM model
+model = SAMFineTuned(sam)
+model.to(device)
+
+# Freeze all layers of the pre-trained SAM model for transfer learning
+for param in model.sam.parameters():
+    param.requires_grad = False
+
+# Unfreeze only the segmentation head for initial training
+for param in model.segmentation_head.parameters():
+    param.requires_grad = True
+
+# After initial training, unfreeze specific layers of the SAM model for fine-tuning
+for name, param in model.sam.named_parameters():
+    if "image_encoder.layer4" in name:  # Example: Unfreeze specific encoder layers
+        param.requires_grad = True
+
+# Define the optimizer with separate learning rates for different parts of the model
+optimizer = torch.optim.Adam([
+    {"params": model.sam.parameters(), "lr": 1e-5},  # Lower learning rate for SAM layers
+    {"params": model.segmentation_head.parameters(), "lr": 1e-4},  # Higher learning rate for the segmentation head
+])
+
+# Print a summary of the model layers and their trainability
+print("Model summary:")
+for name, param in model.named_parameters():
+    print(f"{name}: {'Trainable' if param.requires_grad else 'Frozen'}")
+
+print("Model ready for transfer learning and fine-tuning.")
+```
+
+#### Step 4: Inference
+I deployed the trained model for real-time or near-real-time inference, optimized for use on local hardware or edge devices.
+
+Details:
+
+* Model Optimization: I used TensorRT to optimize the model for faster inference without sacrificing accuracy.
+
+#### Step 5: Final Evaluation and Scalability
+I tested the model across various conditions and planned for scalability to broader use cases.
+
+Details:
+
+* Diverse Testing: I evaluated the model on test datasets representing different seasons, weather conditions, and environmental variations to ensure generalizability.
+* Ablation Studies: I conducted studies to understand the contributions of individual components, such as GPS integration and data augmentation, to the overall performance.
+* Reproducibility: I documented the entire process, including code, annotations, and evaluation metrics, to ensure reproducibility and facilitate sharing with the research community.
