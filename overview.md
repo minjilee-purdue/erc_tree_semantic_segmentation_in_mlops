@@ -224,19 +224,3 @@ for name, param in model.named_parameters():
 
 print("Model ready for transfer learning and fine-tuning.")
 ```
-
-#### Step 4: Inference
-I deployed the trained model for real-time or near-real-time inference, optimized for use on local hardware or edge devices.
-
-Details:
-
-* Model Optimization: I used TensorRT to optimize the model for faster inference without sacrificing accuracy.
-
-#### Step 5: Final Evaluation and Scalability
-I tested the model across various conditions and planned for scalability to broader use cases.
-
-Details:
-
-* Diverse Testing: I evaluated the model on test datasets representing different seasons, weather conditions, and environmental variations to ensure generalizability.
-* Ablation Studies: I conducted studies to understand the contributions of individual components, such as GPS integration and data augmentation, to the overall performance.
-* Reproducibility: I documented the entire process, including code, annotations, and evaluation metrics, to ensure reproducibility and facilitate sharing with the research community.
