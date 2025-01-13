@@ -5,7 +5,7 @@ EVO II Pro 6K drone was used to capture high-resolution aerial images containing
 
 Details:
 
-* GPS Metadata: I recorded GPS coordinates for each image during the drone flight, particularly noting proximity to water bodies or dense vegetation. This is significant because eastern red cedar trees tend to struggle near water due to competition from more dominant species better adapted to wet environments, which limits their ability to establish and thrive.
+* GPS Metadata: I recorded GPS coordinates for each image during the drone flight, particularly noting proximity to water bodies or dense vegetation. This is significant because ERC trees tend to struggle near water due to competition from more dominant species better adapted to wet environments, which limits their ability to establish and thrive.
 * Systematic Organization: The collected images were stored in directories (e.g., /drone_images/), with metadata, such as GPS coordinates, saved in a structured format like CSV for easy integration during modeling.
 * Incorporating Variations: I included scenarios such as overlapping trees, shadowed regions, and mixed species in the dataset. These challenging cases will test the model's ability to generalize to real-world conditions and improve its robustness.
 
