@@ -224,3 +224,40 @@ for name, param in model.named_parameters():
 
 print("Model ready for transfer learning and fine-tuning.")
 ```
+
+##### Multi-Model Training and Deployment
+Trained a multi-modal model that integrates image data (e.g., SAM features) and text data (captions, environment descriptions, Q&A), and deployed the model to provide outputs like segmentation, classification, or answering user queries based on combined modalities.
+
+```
+/dataset
+│
+├── /images
+│   ├── image_001.jpg
+│   ├── image_002.jpg
+│
+├── /masks
+│   ├── image_001_mask.png
+│   ├── image_002_mask.png
+│
+├── annotations.json
+│   [
+│       {
+│           "image_id": "image_001.jpg",
+│           "caption": "An Eastern Red Cedar tree is in the center, surrounded by rocks and grass.",
+│           "environment_description": "The GPS coordinates indicate this area is in a dry region.",
+│           "question_answer": {
+│               "question": "Is there an Eastern Red Cedar tree in this image?",
+│               "answer": "Yes, there is."
+│           }
+│       },
+│       {
+│           "image_id": "image_002.jpg",
+│           "caption": "An Eastern Red Cedar tree is in the bottom left.",
+│           "environment_description": "This area is in summer with high humidity.",
+│           "question_answer": {
+│               "question": "Where is the Eastern Red Cedar tree?",
+│               "answer": "It is in the bottom left."
+│           }
+│       }
+│   ]
+```
