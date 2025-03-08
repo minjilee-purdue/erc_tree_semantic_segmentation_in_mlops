@@ -571,8 +571,6 @@ train_model(adaptation_layer, train_dataloader, val_dataloader, optimizer, crite
 
 
 '''
-How this?
-
 Training on device: cuda
 Total images: 106
 Training images: 84, Validation images: 22
