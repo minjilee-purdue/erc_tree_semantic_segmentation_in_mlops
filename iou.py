@@ -567,3 +567,106 @@ def train_model(adaptation_layer, train_dataloader, val_dataloader, optimizer, c
 
 # Run training
 train_model(adaptation_layer, train_dataloader, val_dataloader, optimizer, criterion, scheduler, num_epochs=2, device=device)
+
+
+
+'''
+How this?
+
+Training on device: cuda
+Total images: 106
+Training images: 84, Validation images: 22
+Training Epoch 1/2:   0%|                                                    | 0/21 [00:00<?, ?it/s]Original BBox: [4715 2571 5315 3129], Scaled BBox: [882 721 994 878]
+Original BBox: [1306  210 1536  382], Scaled BBox: [244  58 287 107]
+Original BBox: [3651 2877 3672 2891], Scaled BBox: [683 807 687 811]
+Original BBox: [3075 3248 3888 3648], Scaled BBox: [ 575  911  727 1023]
+Transformed Bounding Box: tensor([[882., 721., 994., 878.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[882., 721., 994., 878.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[882., 721., 994., 878.]], device='cuda:0')
+Transformed Bounding Box: tensor([[244.,  58., 287., 107.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[244.,  58., 287., 107.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[244.,  58., 287., 107.]], device='cuda:0')
+Transformed Bounding Box: tensor([[683., 807., 687., 811.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[683., 807., 687., 811.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[683., 807., 687., 811.]], device='cuda:0')
+Transformed Bounding Box: tensor([[ 575.,  911.,  727., 1023.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[ 575.,  911.,  727., 1023.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[ 575.,  911.,  727., 1023.]], device='cuda:0')
+Predicted Mask Sum: 1972344.375, Target Mask Sum: 69600.0
+Predicted Mask Sum: 1972344.375, Target Mask Sum: 69600.0
+Training Epoch 1/2:   5%|▉                   | 1/21 [00:02<00:40,  2.00s/it, loss=0.643, iou=0.0166]Original BBox: [ 686 2917  845 3048], Scaled BBox: [128 818 158 855]
+Original BBox: [ 539 2643  717 2828], Scaled BBox: [100 741 134 793]
+Original BBox: [4679  889 5259 1456], Scaled BBox: [875 249 984 408]
+Original BBox: [ 891 1486 1261 1840], Scaled BBox: [166 417 235 516]
+Transformed Bounding Box: tensor([[128., 818., 158., 855.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[128., 818., 158., 855.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[128., 818., 158., 855.]], device='cuda:0')
+Transformed Bounding Box: tensor([[100., 741., 134., 793.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[100., 741., 134., 793.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[100., 741., 134., 793.]], device='cuda:0')
+Transformed Bounding Box: tensor([[875., 249., 984., 408.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[875., 249., 984., 408.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[875., 249., 984., 408.]], device='cuda:0')
+Transformed Bounding Box: tensor([[166., 417., 235., 516.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[166., 417., 235., 516.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[166., 417., 235., 516.]], device='cuda:0')
+Predicted Mask Sum: 1982297.5, Target Mask Sum: 22600.0
+Predicted Mask Sum: 1982297.5, Target Mask Sum: 22600.0
+Training Epoch 1/2:  10%|█▊                 | 2/21 [00:03<00:36,  1.90s/it, loss=0.646, iou=0.00539]Original BBox: [1864 2259 2729 3082], Scaled BBox: [348 634 510 865]
+Original BBox: [2913 2655 3082 2813], Scaled BBox: [545 745 576 789]
+Original BBox: [ 269 3119  465 3329], Scaled BBox: [ 50 875  87 934]
+Original BBox: [ 436 1136 1409 2416], Scaled BBox: [ 81 318 263 678]
+Transformed Bounding Box: tensor([[348., 634., 510., 865.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[348., 634., 510., 865.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[348., 634., 510., 865.]], device='cuda:0')
+Transformed Bounding Box: tensor([[545., 745., 576., 789.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[545., 745., 576., 789.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[545., 745., 576., 789.]], device='cuda:0')
+Transformed Bounding Box: tensor([[ 50., 875.,  87., 934.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[ 50., 875.,  87., 934.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[ 50., 875.,  87., 934.]], device='cuda:0')
+Transformed Bounding Box: tensor([[ 81., 318., 263., 678.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[ 81., 318., 263., 678.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[ 81., 318., 263., 678.]], device='cuda:0')
+Predicted Mask Sum: 1974765.875, Target Mask Sum: 210586.0
+Predicted Mask Sum: 1974765.875, Target Mask Sum: 210586.0
+Training Epoch 1/2:  14%|██▊                 | 3/21 [00:05<00:33,  1.85s/it, loss=0.651, iou=0.0502]Original BBox: [1529  746 2116 1313], Scaled BBox: [286 209 395 368]
+Original BBox: [1887 1457 2018 1685], Scaled BBox: [353 408 377 472]
+Original BBox: [ 819 2082 1170 2451], Scaled BBox: [153 584 218 688]
+Original BBox: [2898 2099 3096 2271], Scaled BBox: [542 589 579 637]
+Transformed Bounding Box: tensor([[286., 209., 395., 368.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[286., 209., 395., 368.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[286., 209., 395., 368.]], device='cuda:0')
+Transformed Bounding Box: tensor([[353., 408., 377., 472.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[353., 408., 377., 472.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[353., 408., 377., 472.]], device='cuda:0')
+Transformed Bounding Box: tensor([[153., 584., 218., 688.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[153., 584., 218., 688.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[153., 584., 218., 688.]], device='cuda:0')
+Transformed Bounding Box: tensor([[542., 589., 579., 637.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[542., 589., 579., 637.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[542., 589., 579., 637.]], device='cuda:0')
+Predicted Mask Sum: 1969525.5, Target Mask Sum: 28973.0
+Predicted Mask Sum: 1969525.5, Target Mask Sum: 28973.0
+Training Epoch 1/2:  19%|███▌               | 4/21 [00:07<00:31,  1.83s/it, loss=0.638, iou=0.00691]Original BBox: [4591 2326 4968 2683], Scaled BBox: [859 652 929 753]
+Original BBox: [1236    0 1431  189], Scaled BBox: [231   0 267  53]
+Original BBox: [2047 1301 2210 1465], Scaled BBox: [383 365 413 411]
+Original BBox: [2228 2482 2573 2776], Scaled BBox: [416 696 481 779]
+Transformed Bounding Box: tensor([[859., 652., 929., 753.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[859., 652., 929., 753.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[859., 652., 929., 753.]], device='cuda:0')
+Transformed Bounding Box: tensor([[231.,   0., 267.,  53.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[231.,   0., 267.,  53.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[231.,   0., 267.,  53.]], device='cuda:0')
+Transformed Bounding Box: tensor([[383., 365., 413., 411.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[383., 365., 413., 411.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[383., 365., 413., 411.]], device='cuda:0')
+Transformed Bounding Box: tensor([[416., 696., 481., 779.]], device='cuda:0')
+Scaled BBox (before transformation): tensor([[416., 696., 481., 779.]], device='cuda:0')
+Transformed BBox (after apply_boxes_torch): tensor([[416., 696., 481., 779.]], device='cuda:0')
+Predicted Mask Sum: 1961597.0, Target Mask Sum: 39954.0
+Predicted Mask Sum: 1961597.0, Target Mask Sum: 39954.0
+Training Epoch 1/2:  24%|████▌              | 5/21 [00:09<00:29,  1.83s/it, loss=0.635, iou=0.00953]Original BBox: [3935 1011 4384 1370], Scaled BBox: [736 283 820 384]
+Original BBox: [4519  971 4811 1231], Scaled BBox: [845 272 900 345]
+
+'''
