@@ -1,6 +1,6 @@
 # comparison
 """
-Configuration file for SAM fine-tuning experiments
+comparison: conv2d and linear projection
 """
 
 import torch
